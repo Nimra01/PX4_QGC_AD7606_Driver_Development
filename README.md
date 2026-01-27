@@ -19,7 +19,9 @@ git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 2. Copy Necessary Files
    
 cp -r path_to_this_repo/ad7606_uart_6C PX4-Autopilot/src/drivers/
+
 cp -r path_to_this_repo/ad7606_uart_CUAV PX4-Autopilot/src/drivers/
+   
 cp path_to_this_repo/ad7606.msg PX4-Autopilot/msg/
 
 4. Update MAVLink Message Definitions

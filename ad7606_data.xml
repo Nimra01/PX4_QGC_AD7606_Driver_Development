@@ -1,0 +1,14 @@
+</message>
+<message id="42010" name="AD7606_DATA">
+  <description>AD7606 ADC control surface and strain data</description>
+  <field type="uint32_t" name="time_boot_ms"/>
+  <field type="uint32_t" name="ts"/>
+  <field type="uint16_t" name="elev_port"/>
+  <field type="uint16_t" name="elev_stbd"/>
+  <field type="uint16_t" name="flap_port"/>
+  <field type="uint16_t" name="flap_stbd"/>
+  <field type="uint16_t" name="rudder_port"/>
+  <field type="uint16_t" name="rudder_stbd"/>
+  <field type="uint16_t" name="strain_port"/>
+  <field type="uint16_t" name="strain_stbd"/>
+</message>

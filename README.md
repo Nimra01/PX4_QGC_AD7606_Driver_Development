@@ -1,9 +1,12 @@
 # PX4_QGC_AD7606_Driver_Development
 Driver Development in PX4 Autopilot and its integration with QGC
+
 **Overview**
+
 This repository contains a custom driver for interfacing the PX4 firmware with AD7606 sensor for getting potentiometer feedback. The driver reads data via UART port on the Flight Controller, publishes it to a uORB topic, and streams the data using MAVLink, allowing it to be displayed on QGroundControl.
 
 **Features**
+
 Interface with AD7606 via UART port on PX4.
 Publishes sensor data to uORB topics for PX4 usage.
 Streams AD7606 data via MAVLink for display in QGroundControl.

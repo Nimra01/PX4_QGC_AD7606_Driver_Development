@@ -13,19 +13,21 @@ Streams AD7606 data via MAVLink for display in QGroundControl.
 Setup Instructions
 1. Clone the PX4-Autopilot Repository
 To begin, clone the PX4-Autopilot repository:
+
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 
 2. Copy Necessary Files
+   
 cp -r path_to_this_repo/ad7606_uart_6C PX4-Autopilot/src/drivers/
 cp -r path_to_this_repo/ad7606_uart_CUAV PX4-Autopilot/src/drivers/
 cp path_to_this_repo/ad7606.msg PX4-Autopilot/msg/
 
-3. Update MAVLink Message Definitions
+4. Update MAVLink Message Definitions
 Add the ad7606_data.xml content to the PX4-Autopilot/src/modules/mavlink/mavlink/message_definitions/v1.0/common.xml file. Insert the XML code appropriately within the section of common.xml.
 
-4. Add MAVLink Stream Header
+5. Add MAVLink Stream Header
 cp path_to_this_repo/AD7606_DATA.hpp PX4-Autopilot/src/modules/mavlink/streams/
-5. Override MAVLink Source Files
+6. Override MAVLink Source Files
 cp path_to_this_repo/mavlink_main.cpp PX4-Autopilot/src/modules/mavlink/
 cp path_to_this_repo/mavlink_messages.cpp PX4-Autopilot/src/modules/mavlink/
 Compile the firmware and use the provided QGroundControl.exe application upload the compiled firmware to your flight controller. Then use the same QGC app to connect to the Autopilot.

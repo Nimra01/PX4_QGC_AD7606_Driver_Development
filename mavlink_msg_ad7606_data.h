@@ -5,7 +5,7 @@
 
 
 typedef struct __mavlink_ad7606_data_t {
- uint32_t time_boot_ms; /*<  */
+ uint64_t timestamp; /*<  */
  uint32_t ts; /*<  */
  uint16_t elev_port; /*<  */
  uint16_t elev_stbd; /*<  */
@@ -17,13 +17,13 @@ typedef struct __mavlink_ad7606_data_t {
  uint16_t strain_stbd; /*<  */
 } mavlink_ad7606_data_t;
 
-#define MAVLINK_MSG_ID_AD7606_DATA_LEN 24
-#define MAVLINK_MSG_ID_AD7606_DATA_MIN_LEN 24
-#define MAVLINK_MSG_ID_42010_LEN 24
-#define MAVLINK_MSG_ID_42010_MIN_LEN 24
+#define MAVLINK_MSG_ID_AD7606_DATA_LEN 28
+#define MAVLINK_MSG_ID_AD7606_DATA_MIN_LEN 28
+#define MAVLINK_MSG_ID_42010_LEN 28
+#define MAVLINK_MSG_ID_42010_MIN_LEN 28
 
-#define MAVLINK_MSG_ID_AD7606_DATA_CRC 160
-#define MAVLINK_MSG_ID_42010_CRC 160
+#define MAVLINK_MSG_ID_AD7606_DATA_CRC 82
+#define MAVLINK_MSG_ID_42010_CRC 82
 
 
 
@@ -32,32 +32,32 @@ typedef struct __mavlink_ad7606_data_t {
     42010, \
     "AD7606_DATA", \
     10, \
-    {  { "time_boot_ms", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_ad7606_data_t, time_boot_ms) }, \
-         { "ts", NULL, MAVLINK_TYPE_UINT32_T, 0, 4, offsetof(mavlink_ad7606_data_t, ts) }, \
-         { "elev_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 8, offsetof(mavlink_ad7606_data_t, elev_port) }, \
-         { "elev_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 10, offsetof(mavlink_ad7606_data_t, elev_stbd) }, \
-         { "flap_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 12, offsetof(mavlink_ad7606_data_t, flap_port) }, \
-         { "flap_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 14, offsetof(mavlink_ad7606_data_t, flap_stbd) }, \
-         { "rudder_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 16, offsetof(mavlink_ad7606_data_t, rudder_port) }, \
-         { "rudder_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 18, offsetof(mavlink_ad7606_data_t, rudder_stbd) }, \
-         { "strain_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 20, offsetof(mavlink_ad7606_data_t, strain_port) }, \
-         { "strain_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 22, offsetof(mavlink_ad7606_data_t, strain_stbd) }, \
+    {  { "timestamp", NULL, MAVLINK_TYPE_UINT64_T, 0, 0, offsetof(mavlink_ad7606_data_t, timestamp) }, \
+         { "ts", NULL, MAVLINK_TYPE_UINT32_T, 0, 8, offsetof(mavlink_ad7606_data_t, ts) }, \
+         { "elev_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 12, offsetof(mavlink_ad7606_data_t, elev_port) }, \
+         { "elev_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 14, offsetof(mavlink_ad7606_data_t, elev_stbd) }, \
+         { "flap_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 16, offsetof(mavlink_ad7606_data_t, flap_port) }, \
+         { "flap_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 18, offsetof(mavlink_ad7606_data_t, flap_stbd) }, \
+         { "rudder_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 20, offsetof(mavlink_ad7606_data_t, rudder_port) }, \
+         { "rudder_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 22, offsetof(mavlink_ad7606_data_t, rudder_stbd) }, \
+         { "strain_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 24, offsetof(mavlink_ad7606_data_t, strain_port) }, \
+         { "strain_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 26, offsetof(mavlink_ad7606_data_t, strain_stbd) }, \
          } \
 }
 #else
 #define MAVLINK_MESSAGE_INFO_AD7606_DATA { \
     "AD7606_DATA", \
     10, \
-    {  { "time_boot_ms", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_ad7606_data_t, time_boot_ms) }, \
-         { "ts", NULL, MAVLINK_TYPE_UINT32_T, 0, 4, offsetof(mavlink_ad7606_data_t, ts) }, \
-         { "elev_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 8, offsetof(mavlink_ad7606_data_t, elev_port) }, \
-         { "elev_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 10, offsetof(mavlink_ad7606_data_t, elev_stbd) }, \
-         { "flap_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 12, offsetof(mavlink_ad7606_data_t, flap_port) }, \
-         { "flap_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 14, offsetof(mavlink_ad7606_data_t, flap_stbd) }, \
-         { "rudder_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 16, offsetof(mavlink_ad7606_data_t, rudder_port) }, \
-         { "rudder_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 18, offsetof(mavlink_ad7606_data_t, rudder_stbd) }, \
-         { "strain_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 20, offsetof(mavlink_ad7606_data_t, strain_port) }, \
-         { "strain_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 22, offsetof(mavlink_ad7606_data_t, strain_stbd) }, \
+    {  { "timestamp", NULL, MAVLINK_TYPE_UINT64_T, 0, 0, offsetof(mavlink_ad7606_data_t, timestamp) }, \
+         { "ts", NULL, MAVLINK_TYPE_UINT32_T, 0, 8, offsetof(mavlink_ad7606_data_t, ts) }, \
+         { "elev_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 12, offsetof(mavlink_ad7606_data_t, elev_port) }, \
+         { "elev_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 14, offsetof(mavlink_ad7606_data_t, elev_stbd) }, \
+         { "flap_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 16, offsetof(mavlink_ad7606_data_t, flap_port) }, \
+         { "flap_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 18, offsetof(mavlink_ad7606_data_t, flap_stbd) }, \
+         { "rudder_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 20, offsetof(mavlink_ad7606_data_t, rudder_port) }, \
+         { "rudder_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 22, offsetof(mavlink_ad7606_data_t, rudder_stbd) }, \
+         { "strain_port", NULL, MAVLINK_TYPE_UINT16_T, 0, 24, offsetof(mavlink_ad7606_data_t, strain_port) }, \
+         { "strain_stbd", NULL, MAVLINK_TYPE_UINT16_T, 0, 26, offsetof(mavlink_ad7606_data_t, strain_stbd) }, \
          } \
 }
 #endif
@@ -68,7 +68,7 @@ typedef struct __mavlink_ad7606_data_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_boot_ms  
+ * @param timestamp  
  * @param ts  
  * @param elev_port  
  * @param elev_stbd  
@@ -81,25 +81,25 @@ typedef struct __mavlink_ad7606_data_t {
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_ad7606_data_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
-                               uint32_t time_boot_ms, uint32_t ts, uint16_t elev_port, uint16_t elev_stbd, uint16_t flap_port, uint16_t flap_stbd, uint16_t rudder_port, uint16_t rudder_stbd, uint16_t strain_port, uint16_t strain_stbd)
+                               uint64_t timestamp, uint32_t ts, uint16_t elev_port, uint16_t elev_stbd, uint16_t flap_port, uint16_t flap_stbd, uint16_t rudder_port, uint16_t rudder_stbd, uint16_t strain_port, uint16_t strain_stbd)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_AD7606_DATA_LEN];
-    _mav_put_uint32_t(buf, 0, time_boot_ms);
-    _mav_put_uint32_t(buf, 4, ts);
-    _mav_put_uint16_t(buf, 8, elev_port);
-    _mav_put_uint16_t(buf, 10, elev_stbd);
-    _mav_put_uint16_t(buf, 12, flap_port);
-    _mav_put_uint16_t(buf, 14, flap_stbd);
-    _mav_put_uint16_t(buf, 16, rudder_port);
-    _mav_put_uint16_t(buf, 18, rudder_stbd);
-    _mav_put_uint16_t(buf, 20, strain_port);
-    _mav_put_uint16_t(buf, 22, strain_stbd);
+    _mav_put_uint64_t(buf, 0, timestamp);
+    _mav_put_uint32_t(buf, 8, ts);
+    _mav_put_uint16_t(buf, 12, elev_port);
+    _mav_put_uint16_t(buf, 14, elev_stbd);
+    _mav_put_uint16_t(buf, 16, flap_port);
+    _mav_put_uint16_t(buf, 18, flap_stbd);
+    _mav_put_uint16_t(buf, 20, rudder_port);
+    _mav_put_uint16_t(buf, 22, rudder_stbd);
+    _mav_put_uint16_t(buf, 24, strain_port);
+    _mav_put_uint16_t(buf, 26, strain_stbd);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_AD7606_DATA_LEN);
 #else
     mavlink_ad7606_data_t packet;
-    packet.time_boot_ms = time_boot_ms;
+    packet.timestamp = timestamp;
     packet.ts = ts;
     packet.elev_port = elev_port;
     packet.elev_stbd = elev_stbd;
@@ -123,7 +123,7 @@ static inline uint16_t mavlink_msg_ad7606_data_pack(uint8_t system_id, uint8_t c
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_boot_ms  
+ * @param timestamp  
  * @param ts  
  * @param elev_port  
  * @param elev_stbd  
@@ -137,25 +137,25 @@ static inline uint16_t mavlink_msg_ad7606_data_pack(uint8_t system_id, uint8_t c
  */
 static inline uint16_t mavlink_msg_ad7606_data_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
                                mavlink_message_t* msg,
-                                   uint32_t time_boot_ms,uint32_t ts,uint16_t elev_port,uint16_t elev_stbd,uint16_t flap_port,uint16_t flap_stbd,uint16_t rudder_port,uint16_t rudder_stbd,uint16_t strain_port,uint16_t strain_stbd)
+                                   uint64_t timestamp,uint32_t ts,uint16_t elev_port,uint16_t elev_stbd,uint16_t flap_port,uint16_t flap_stbd,uint16_t rudder_port,uint16_t rudder_stbd,uint16_t strain_port,uint16_t strain_stbd)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_AD7606_DATA_LEN];
-    _mav_put_uint32_t(buf, 0, time_boot_ms);
-    _mav_put_uint32_t(buf, 4, ts);
-    _mav_put_uint16_t(buf, 8, elev_port);
-    _mav_put_uint16_t(buf, 10, elev_stbd);
-    _mav_put_uint16_t(buf, 12, flap_port);
-    _mav_put_uint16_t(buf, 14, flap_stbd);
-    _mav_put_uint16_t(buf, 16, rudder_port);
-    _mav_put_uint16_t(buf, 18, rudder_stbd);
-    _mav_put_uint16_t(buf, 20, strain_port);
-    _mav_put_uint16_t(buf, 22, strain_stbd);
+    _mav_put_uint64_t(buf, 0, timestamp);
+    _mav_put_uint32_t(buf, 8, ts);
+    _mav_put_uint16_t(buf, 12, elev_port);
+    _mav_put_uint16_t(buf, 14, elev_stbd);
+    _mav_put_uint16_t(buf, 16, flap_port);
+    _mav_put_uint16_t(buf, 18, flap_stbd);
+    _mav_put_uint16_t(buf, 20, rudder_port);
+    _mav_put_uint16_t(buf, 22, rudder_stbd);
+    _mav_put_uint16_t(buf, 24, strain_port);
+    _mav_put_uint16_t(buf, 26, strain_stbd);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_AD7606_DATA_LEN);
 #else
     mavlink_ad7606_data_t packet;
-    packet.time_boot_ms = time_boot_ms;
+    packet.timestamp = timestamp;
     packet.ts = ts;
     packet.elev_port = elev_port;
     packet.elev_stbd = elev_stbd;
@@ -183,7 +183,7 @@ static inline uint16_t mavlink_msg_ad7606_data_pack_chan(uint8_t system_id, uint
  */
 static inline uint16_t mavlink_msg_ad7606_data_encode(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg, const mavlink_ad7606_data_t* ad7606_data)
 {
-    return mavlink_msg_ad7606_data_pack(system_id, component_id, msg, ad7606_data->time_boot_ms, ad7606_data->ts, ad7606_data->elev_port, ad7606_data->elev_stbd, ad7606_data->flap_port, ad7606_data->flap_stbd, ad7606_data->rudder_port, ad7606_data->rudder_stbd, ad7606_data->strain_port, ad7606_data->strain_stbd);
+    return mavlink_msg_ad7606_data_pack(system_id, component_id, msg, ad7606_data->timestamp, ad7606_data->ts, ad7606_data->elev_port, ad7606_data->elev_stbd, ad7606_data->flap_port, ad7606_data->flap_stbd, ad7606_data->rudder_port, ad7606_data->rudder_stbd, ad7606_data->strain_port, ad7606_data->strain_stbd);
 }
 
 /**
@@ -197,14 +197,14 @@ static inline uint16_t mavlink_msg_ad7606_data_encode(uint8_t system_id, uint8_t
  */
 static inline uint16_t mavlink_msg_ad7606_data_encode_chan(uint8_t system_id, uint8_t component_id, uint8_t chan, mavlink_message_t* msg, const mavlink_ad7606_data_t* ad7606_data)
 {
-    return mavlink_msg_ad7606_data_pack_chan(system_id, component_id, chan, msg, ad7606_data->time_boot_ms, ad7606_data->ts, ad7606_data->elev_port, ad7606_data->elev_stbd, ad7606_data->flap_port, ad7606_data->flap_stbd, ad7606_data->rudder_port, ad7606_data->rudder_stbd, ad7606_data->strain_port, ad7606_data->strain_stbd);
+    return mavlink_msg_ad7606_data_pack_chan(system_id, component_id, chan, msg, ad7606_data->timestamp, ad7606_data->ts, ad7606_data->elev_port, ad7606_data->elev_stbd, ad7606_data->flap_port, ad7606_data->flap_stbd, ad7606_data->rudder_port, ad7606_data->rudder_stbd, ad7606_data->strain_port, ad7606_data->strain_stbd);
 }
 
 /**
  * @brief Send a ad7606_data message
  * @param chan MAVLink channel to send the message
  *
- * @param time_boot_ms  
+ * @param timestamp  
  * @param ts  
  * @param elev_port  
  * @param elev_stbd  
@@ -217,25 +217,25 @@ static inline uint16_t mavlink_msg_ad7606_data_encode_chan(uint8_t system_id, ui
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
-static inline void mavlink_msg_ad7606_data_send(mavlink_channel_t chan, uint32_t time_boot_ms, uint32_t ts, uint16_t elev_port, uint16_t elev_stbd, uint16_t flap_port, uint16_t flap_stbd, uint16_t rudder_port, uint16_t rudder_stbd, uint16_t strain_port, uint16_t strain_stbd)
+static inline void mavlink_msg_ad7606_data_send(mavlink_channel_t chan, uint64_t timestamp, uint32_t ts, uint16_t elev_port, uint16_t elev_stbd, uint16_t flap_port, uint16_t flap_stbd, uint16_t rudder_port, uint16_t rudder_stbd, uint16_t strain_port, uint16_t strain_stbd)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_AD7606_DATA_LEN];
-    _mav_put_uint32_t(buf, 0, time_boot_ms);
-    _mav_put_uint32_t(buf, 4, ts);
-    _mav_put_uint16_t(buf, 8, elev_port);
-    _mav_put_uint16_t(buf, 10, elev_stbd);
-    _mav_put_uint16_t(buf, 12, flap_port);
-    _mav_put_uint16_t(buf, 14, flap_stbd);
-    _mav_put_uint16_t(buf, 16, rudder_port);
-    _mav_put_uint16_t(buf, 18, rudder_stbd);
-    _mav_put_uint16_t(buf, 20, strain_port);
-    _mav_put_uint16_t(buf, 22, strain_stbd);
+    _mav_put_uint64_t(buf, 0, timestamp);
+    _mav_put_uint32_t(buf, 8, ts);
+    _mav_put_uint16_t(buf, 12, elev_port);
+    _mav_put_uint16_t(buf, 14, elev_stbd);
+    _mav_put_uint16_t(buf, 16, flap_port);
+    _mav_put_uint16_t(buf, 18, flap_stbd);
+    _mav_put_uint16_t(buf, 20, rudder_port);
+    _mav_put_uint16_t(buf, 22, rudder_stbd);
+    _mav_put_uint16_t(buf, 24, strain_port);
+    _mav_put_uint16_t(buf, 26, strain_stbd);
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_AD7606_DATA, buf, MAVLINK_MSG_ID_AD7606_DATA_MIN_LEN, MAVLINK_MSG_ID_AD7606_DATA_LEN, MAVLINK_MSG_ID_AD7606_DATA_CRC);
 #else
     mavlink_ad7606_data_t packet;
-    packet.time_boot_ms = time_boot_ms;
+    packet.timestamp = timestamp;
     packet.ts = ts;
     packet.elev_port = elev_port;
     packet.elev_stbd = elev_stbd;
@@ -258,7 +258,7 @@ static inline void mavlink_msg_ad7606_data_send(mavlink_channel_t chan, uint32_t
 static inline void mavlink_msg_ad7606_data_send_struct(mavlink_channel_t chan, const mavlink_ad7606_data_t* ad7606_data)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
-    mavlink_msg_ad7606_data_send(chan, ad7606_data->time_boot_ms, ad7606_data->ts, ad7606_data->elev_port, ad7606_data->elev_stbd, ad7606_data->flap_port, ad7606_data->flap_stbd, ad7606_data->rudder_port, ad7606_data->rudder_stbd, ad7606_data->strain_port, ad7606_data->strain_stbd);
+    mavlink_msg_ad7606_data_send(chan, ad7606_data->timestamp, ad7606_data->ts, ad7606_data->elev_port, ad7606_data->elev_stbd, ad7606_data->flap_port, ad7606_data->flap_stbd, ad7606_data->rudder_port, ad7606_data->rudder_stbd, ad7606_data->strain_port, ad7606_data->strain_stbd);
 #else
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_AD7606_DATA, (const char *)ad7606_data, MAVLINK_MSG_ID_AD7606_DATA_MIN_LEN, MAVLINK_MSG_ID_AD7606_DATA_LEN, MAVLINK_MSG_ID_AD7606_DATA_CRC);
 #endif
@@ -272,25 +272,25 @@ static inline void mavlink_msg_ad7606_data_send_struct(mavlink_channel_t chan, c
   is usually the receive buffer for the channel, and allows a reply to an
   incoming message with minimum stack space usage.
  */
-static inline void mavlink_msg_ad7606_data_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  uint32_t time_boot_ms, uint32_t ts, uint16_t elev_port, uint16_t elev_stbd, uint16_t flap_port, uint16_t flap_stbd, uint16_t rudder_port, uint16_t rudder_stbd, uint16_t strain_port, uint16_t strain_stbd)
+static inline void mavlink_msg_ad7606_data_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  uint64_t timestamp, uint32_t ts, uint16_t elev_port, uint16_t elev_stbd, uint16_t flap_port, uint16_t flap_stbd, uint16_t rudder_port, uint16_t rudder_stbd, uint16_t strain_port, uint16_t strain_stbd)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char *buf = (char *)msgbuf;
-    _mav_put_uint32_t(buf, 0, time_boot_ms);
-    _mav_put_uint32_t(buf, 4, ts);
-    _mav_put_uint16_t(buf, 8, elev_port);
-    _mav_put_uint16_t(buf, 10, elev_stbd);
-    _mav_put_uint16_t(buf, 12, flap_port);
-    _mav_put_uint16_t(buf, 14, flap_stbd);
-    _mav_put_uint16_t(buf, 16, rudder_port);
-    _mav_put_uint16_t(buf, 18, rudder_stbd);
-    _mav_put_uint16_t(buf, 20, strain_port);
-    _mav_put_uint16_t(buf, 22, strain_stbd);
+    _mav_put_uint64_t(buf, 0, timestamp);
+    _mav_put_uint32_t(buf, 8, ts);
+    _mav_put_uint16_t(buf, 12, elev_port);
+    _mav_put_uint16_t(buf, 14, elev_stbd);
+    _mav_put_uint16_t(buf, 16, flap_port);
+    _mav_put_uint16_t(buf, 18, flap_stbd);
+    _mav_put_uint16_t(buf, 20, rudder_port);
+    _mav_put_uint16_t(buf, 22, rudder_stbd);
+    _mav_put_uint16_t(buf, 24, strain_port);
+    _mav_put_uint16_t(buf, 26, strain_stbd);
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_AD7606_DATA, buf, MAVLINK_MSG_ID_AD7606_DATA_MIN_LEN, MAVLINK_MSG_ID_AD7606_DATA_LEN, MAVLINK_MSG_ID_AD7606_DATA_CRC);
 #else
     mavlink_ad7606_data_t *packet = (mavlink_ad7606_data_t *)msgbuf;
-    packet->time_boot_ms = time_boot_ms;
+    packet->timestamp = timestamp;
     packet->ts = ts;
     packet->elev_port = elev_port;
     packet->elev_stbd = elev_stbd;
@@ -312,13 +312,13 @@ static inline void mavlink_msg_ad7606_data_send_buf(mavlink_message_t *msgbuf, m
 
 
 /**
- * @brief Get field time_boot_ms from ad7606_data message
+ * @brief Get field timestamp from ad7606_data message
  *
  * @return  
  */
-static inline uint32_t mavlink_msg_ad7606_data_get_time_boot_ms(const mavlink_message_t* msg)
+static inline uint64_t mavlink_msg_ad7606_data_get_timestamp(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  0);
+    return _MAV_RETURN_uint64_t(msg,  0);
 }
 
 /**
@@ -328,7 +328,7 @@ static inline uint32_t mavlink_msg_ad7606_data_get_time_boot_ms(const mavlink_me
  */
 static inline uint32_t mavlink_msg_ad7606_data_get_ts(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint32_t(msg,  4);
+    return _MAV_RETURN_uint32_t(msg,  8);
 }
 
 /**
@@ -338,7 +338,7 @@ static inline uint32_t mavlink_msg_ad7606_data_get_ts(const mavlink_message_t* m
  */
 static inline uint16_t mavlink_msg_ad7606_data_get_elev_port(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  8);
+    return _MAV_RETURN_uint16_t(msg,  12);
 }
 
 /**
@@ -348,7 +348,7 @@ static inline uint16_t mavlink_msg_ad7606_data_get_elev_port(const mavlink_messa
  */
 static inline uint16_t mavlink_msg_ad7606_data_get_elev_stbd(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  10);
+    return _MAV_RETURN_uint16_t(msg,  14);
 }
 
 /**
@@ -358,7 +358,7 @@ static inline uint16_t mavlink_msg_ad7606_data_get_elev_stbd(const mavlink_messa
  */
 static inline uint16_t mavlink_msg_ad7606_data_get_flap_port(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  12);
+    return _MAV_RETURN_uint16_t(msg,  16);
 }
 
 /**
@@ -368,7 +368,7 @@ static inline uint16_t mavlink_msg_ad7606_data_get_flap_port(const mavlink_messa
  */
 static inline uint16_t mavlink_msg_ad7606_data_get_flap_stbd(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  14);
+    return _MAV_RETURN_uint16_t(msg,  18);
 }
 
 /**
@@ -378,7 +378,7 @@ static inline uint16_t mavlink_msg_ad7606_data_get_flap_stbd(const mavlink_messa
  */
 static inline uint16_t mavlink_msg_ad7606_data_get_rudder_port(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  16);
+    return _MAV_RETURN_uint16_t(msg,  20);
 }
 
 /**
@@ -388,7 +388,7 @@ static inline uint16_t mavlink_msg_ad7606_data_get_rudder_port(const mavlink_mes
  */
 static inline uint16_t mavlink_msg_ad7606_data_get_rudder_stbd(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  18);
+    return _MAV_RETURN_uint16_t(msg,  22);
 }
 
 /**
@@ -398,7 +398,7 @@ static inline uint16_t mavlink_msg_ad7606_data_get_rudder_stbd(const mavlink_mes
  */
 static inline uint16_t mavlink_msg_ad7606_data_get_strain_port(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  20);
+    return _MAV_RETURN_uint16_t(msg,  24);
 }
 
 /**
@@ -408,7 +408,7 @@ static inline uint16_t mavlink_msg_ad7606_data_get_strain_port(const mavlink_mes
  */
 static inline uint16_t mavlink_msg_ad7606_data_get_strain_stbd(const mavlink_message_t* msg)
 {
-    return _MAV_RETURN_uint16_t(msg,  22);
+    return _MAV_RETURN_uint16_t(msg,  26);
 }
 
 /**
@@ -420,7 +420,7 @@ static inline uint16_t mavlink_msg_ad7606_data_get_strain_stbd(const mavlink_mes
 static inline void mavlink_msg_ad7606_data_decode(const mavlink_message_t* msg, mavlink_ad7606_data_t* ad7606_data)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
-    ad7606_data->time_boot_ms = mavlink_msg_ad7606_data_get_time_boot_ms(msg);
+    ad7606_data->timestamp = mavlink_msg_ad7606_data_get_timestamp(msg);
     ad7606_data->ts = mavlink_msg_ad7606_data_get_ts(msg);
     ad7606_data->elev_port = mavlink_msg_ad7606_data_get_elev_port(msg);
     ad7606_data->elev_stbd = mavlink_msg_ad7606_data_get_elev_stbd(msg);

@@ -1,4 +1,4 @@
-# Driver Development in PX4 Autopilot and Integration with QGroundControl (QGC)
+# Driver Development in PX4 Autopilot
 
 ## Overview
 

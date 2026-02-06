@@ -73,7 +73,7 @@ make px4_fmu-v6c_default
 
 make cuav_x7pro_default
 
-
+```
 Data Flow
 AD7606 Sensor
      ↓ UART
@@ -83,8 +83,7 @@ MAVLink Module
      ↓ MAVLink
 QGroundControl
 
-```
-Result
+## Result
 After flashing the firmware:
 
 AD7606 values are published internally via uORB
@@ -93,13 +92,9 @@ MAVLink streams the data
 
 QGroundControl displays the sensor values in MAVLink Inspector or custom widgets
 
-Notes
+## Notes
 Ensure correct UART port configuration in PX4 parameters
 
 Rebuild firmware after every MAVLink or driver modification
 
 Tested on Pixhawk 6C and CUAV X7 Pro
-
-Author
-Nimra Saeed
-Expert Avionics Engineer

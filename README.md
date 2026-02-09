@@ -92,6 +92,8 @@ MAVLink streams the data
 
 QGroundControl displays the sensor values in MAVLink Inspector or custom widgets
 
+<img width="509" height="532" alt="mavinsp" src="https://github.com/user-attachments/assets/61c900ed-c7b7-40f2-be53-c04db9e79e13" />
+
 ## Notes
 Ensure correct UART port configuration in PX4 parameters
 

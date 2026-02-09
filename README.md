@@ -85,11 +85,34 @@ Use the MAVLink Generator (mavgenerate.py) to process your modified common.xml.
 
 Select Language: C, Protocol: 2.0.
 
-QGC Header Replacement:
+Generating MAVLink Headers
+If you change your message structure in common.xml, you must regenerate the headers for both systems to communicate correctly.
 
-Locate your QGC source folder: libs/mavlink/include/mavlink/v2.0/common/.
+1. Prerequisite: MAVLink Generator
+You need the mavlink repository which contains the generation scripts.
 
-Replace the existing common.h and add your custom ad7606_mavlink_msg.h.
+```
+git clone https://github.com/mavlink/mavlink.git --recursive
+
+```
+2. Generate Headers for QGC
+Navigate to the directory where you cloned the repository and run the generator script. We will target MAVLink 2.0 as it is the standard for modern PX4/QGC setups.
+
+```
+python3 -m pymavlink.tools.mavgen --lang=C --wire-format=v2.0 --output=generated_headers message_definitions/v1.0/common.xml
+```
+3. Apply the Headers
+Once generated, you must manually move the files to their respective locations:
+
+For QGroundControl:
+Go to 
+```
+generated_headers/common/
+```
+
+Copy mavlink_msg_ad7606_data.h (or your specific message file) and the updated common.h.
+
+Paste them into your QGC source: qgroundcontrol/libs/mavlink/include/mavlink/v2.0/common/
 
 Rebuild QGC:
 

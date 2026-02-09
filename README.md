@@ -25,6 +25,7 @@ This enables real-time monitoring of AD7606 sensor channels directly inside QGC.
 ---
 
 ## Setup Instructions
+Part-1
 
 ### 1. Clone PX4-Autopilot
 
@@ -74,7 +75,40 @@ make px4_fmu-v6c_default
 make cuav_x7pro_default
 
 ```
-Data Flow
+Part-2
+## QGroundControl Customization
+To view the messages in QGC, the application must "know" the structure of your custom MAVLink ID.
+
+Header Generation:
+
+Use the MAVLink Generator (mavgenerate.py) to process your modified common.xml.
+
+Select Language: C, Protocol: 2.0.
+
+QGC Header Replacement:
+
+Locate your QGC source folder: libs/mavlink/include/mavlink/v2.0/common/.
+
+Replace the existing common.h and add your custom ad7606_mavlink_msg.h.
+
+Rebuild QGC:
+
+Open qgroundcontrol.pro in Qt Creator.
+
+Run Clean, then Run qmake, and Build.
+
+## Usage & Verification
+Once both PX4 and QGC are updated:
+
+Connect your Flight Controller to QGC.
+
+Navigate to Analyze Tools > MAVLink Inspector.
+
+Look for the message named AD7606_DATA.
+
+Expand the message to view real-time values for all 8 channels (Potentiometer feedback).
+
+## Data Flow
 AD7606 Sensor
      ↓ UART
 PX4 Driver
